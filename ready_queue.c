@@ -20,10 +20,21 @@ enqueue_task( TASK_RQ *rq, PCB* task )
 PCB *
 dequeue_task( TASK_RQ *rq )
 {
+    if( !is_empty() ) {
 
-	--rq.size;
+        PCB *front_task =  rq->rear;
 
-	return front_task;
+        if( rq->front == rq->rear ) {
+            rq->front = rq->rear = NUsLL;
+        } else {
+            rq->front.list->next->prev = NULL;
+            rq->front = rq->front.list->next;
+        }      
+
+	   --rq.size;
+    }
+	
+    return front_task;
 }
 
 bool
@@ -64,7 +75,7 @@ init_task_queue()
 void
 clear_queue( TASK_RQ *rq )
 {
-    while(!is_empty()) {
-        dequeue_task(rq);
+    while( !is_empty() ) {
+        dequeue_task( rq );
     }
 }
