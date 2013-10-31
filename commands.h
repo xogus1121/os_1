@@ -5,12 +5,15 @@
 #define CMD_SHOW "show"
 #define CMD_EXIT "exit"
 
-#define CMD_FUNCTION(x) cmd_##x()
+#define CMD_FUNCTION_NO_PARM(x) cmd_##x();
+#define CMD_FUNCTION_(x, arg) cmd_##x(arg)
 
-void execute_command(char *);
 
-void cmd_pass();
-void cmd_run();
-void cmd_kill();
-void cmd_show();
-void cmd_exit();
+void execute_command(const char *);
+
+static void cmd_mode(const void *);
+static void cmd_pass(const void *);
+static void cmd_kill(const void *);
+static void cmd_run();
+static void cmd_show();
+static void cmd_exit();
