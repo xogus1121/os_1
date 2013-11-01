@@ -1,0 +1,16 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+CMD_EXIT	commands.h	6;"	d
+CMD_KILL	commands.h	4;"	d
+CMD_MODE	commands.h	1;"	d
+CMD_PASS	commands.h	2;"	d
+CMD_RUN	commands.h	3;"	d
+CMD_SHOW	commands.h	5;"	d
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+main	simulator.c	/^int main( void )$/;"	f
+process_command	simulator.c	/^process_command( char *command )$/;"	f
+str_gets	simulator.c	/^str_gets( char *buf, size_t len )$/;"	f
+MAX_COMMAND	simulator.h	1;"	d
